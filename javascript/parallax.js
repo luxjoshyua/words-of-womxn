@@ -78,16 +78,21 @@ const addMovement = function () {
 
     contentTag.style.transform = `rotate(${rotation}deg)`
 
+  
     // check the background
 
-    // if we've passed the middle of the section, apply a background colour
+    // if () something happens, do {} something
 
     if (distanceToSection > -100) {
-      // -100 instead of 0 would change the point it kicks in on the page
+      
+      // find the data-attribute
+      const dataBackground = section.getAttribute("data-background")
 
-      bodyTag.style.backgroundColor = "red"
+      bodyTag.style.backgroundColor = dataBackground
 
     }
+
+
   })
 }
 

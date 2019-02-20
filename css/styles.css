@@ -1,3 +1,15 @@
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+
+}
+
+
 
 @font-face {
   font-family: "Syne";
@@ -11,12 +23,16 @@
 
 body {
   font-family: "Syne", Arial;
-  font-size: 32px; 
-  line-height: 1.25; 
-  background-color: #f4e6d8; 
-  color: #15403d; 
+  font-size: 32px;
+  line-height: 1.25;
+  background-color: #f4e6d8;
+  color: #15403d;
   margin: 240px auto 240px auto;
-  max-width: 1120px; 
+  max-width: 1120px;
+
+  overflow-x: hidden; 
+
+  transition: background-color 1s;
 }
 
 
@@ -27,12 +43,12 @@ p {
 
 
 header {
-  position: fixed; 
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  padding: 32px; 
-  text-align: center; 
+  padding: 32px;
+  text-align: center;
   z-index: 1;
 
 }
@@ -40,43 +56,49 @@ header {
 /* don't add to the scrolled class because we want the effect when we add it
     and when we remove it */
 header img {
-  width: 136px; 
-  transition: width 0.5s; 
+  width: 136px;
+  transition: width 0.5s;
 }
 
 header.scrolled img {
-  width: 64px; 
+  width: 64px;
 }
 
 section {
   margin: 80px 0 80px 0;
   display: flex;
   /* by default, the flex direction is row */
-  flex-direction: row; 
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
 }
 
 
 section:nth-child(even) {
-  flex-direction: row-reverse; 
+  flex-direction: row-reverse;
 }
 
 /* adding in position relative to the below two enables parallax later */
 
 section div {
   position: relative;
-  padding: 40px; 
+  padding: 40px;
 }
 
 section img {
   position: relative;
 }
 
+div.stamps {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+}
 
-
-
-
-
-
-
+div.stamps img {
+  position: absolute;
+  /* centre the img in the middle of where we click */
+  transform: translate(-50%, -50%);
+  animation: spin 30s linear infinite;
+}
