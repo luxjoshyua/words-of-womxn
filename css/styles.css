@@ -9,8 +9,6 @@
 
 }
 
-
-
 @font-face {
   font-family: "Syne";
   src: url(../assets/syne-regular.woff), url(../assets/syne-regular.woff2);
@@ -30,7 +28,7 @@ body {
   margin: 240px auto 240px auto;
   max-width: 1120px;
 
-  overflow-x: hidden; 
+  overflow-x: hidden;
 
   transition: background-color 1s;
 }
